@@ -1,0 +1,123 @@
+#header {
+   position: fixed;
+   display: flex;
+   width: 100%;
+   height: 50px;
+   background: #ffffff;
+   z-index: 1000;
+   box-shadow: 0 5px 10px rgba(0, 64, 128, .05);
+   align-items: center;
+   padding: 0 15px;
+   top: 0;
+   left: 0;
+   right: 0;
+
+   #logo {
+      display: flex;
+      width: max-content;
+      height: max-content;
+      text-decoration: none;
+      align-items: center;
+
+      img {
+         width: 29px;
+      }
+
+      p {
+         color: #000;
+         font-size: 15px;
+         font-weight: 500;
+         margin-left: 5px;
+      }
+   }
+
+   .more-option {
+      position: relative;
+      display: flex;
+      height: 100%;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: flex-end;
+
+      > span {
+         position: relative;
+         color: #bccddf;
+         font-size: 24px;
+         cursor: pointer;
+         -ms-user-select: none;
+         -ms-touch-select: none;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         user-select: none;
+         padding: 5px 0;
+
+         &:hover::before {
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+         }
+
+         &:active::before {
+            background: #a2cdf73f;
+         }
+
+         &::before {
+            position: absolute;
+            width: 0;
+            height: 0;
+            content: '';
+            background: #a2ccf72e;
+            transform: translate(-50%, -50%);
+            transition: height 0.3s ease, width 0.3s ease, opacity 0.3s ease;
+            border-radius: 50%;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+         }
+      }
+
+      .drop-back {
+         position: fixed;
+         width: 100vw;
+         height: 100vh;
+         z-index: 1001;
+         top: 0;
+         left: 0;
+         right: 0;
+      }
+
+      .drop-down {
+         position: absolute;
+         width: 200px;
+         height: max-content;
+         background: #fff;
+         box-shadow: 0 5px 10px rgba(0, 64, 128, 0.08);
+         border: none !important;
+         outline: none !important;
+         transform-origin: top !important;
+         border-radius: 5px;
+         border: 1px solid #0000002f;
+         z-index: 1002;
+         overflow: hidden;
+         top: 100%;
+         right: 15px;
+
+         .drop-item {
+            display: block;
+            color: #000000;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            padding: 10px 20px;
+
+            &:hover {
+               background: #f5faff;
+            }
+         }
+
+         .active-link {
+            color: #807f7f;
+         }
+      }
+   }
+}
